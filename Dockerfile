@@ -9,7 +9,7 @@ RUN mvn dependency:go-offline
 # copia todo el proyecto
 COPY src ./src
 # levanta el proyecto y correlo
-RUN mvn clean package -DskipTest
+RUN mvn clean package -DskipTests
 # verifico el archivo .jar se haya generado
 RUN ls -la /app/target
 
