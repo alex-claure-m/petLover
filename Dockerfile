@@ -14,7 +14,7 @@ RUN mvn clean package -DskipTest
 RUN ls -la /app/target
 
 # esto es para cuando ya genere el .jar
-FROM openjdk:17-jdk-alpine
+FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 # y copio y cambio el nombre el mismo .jar
