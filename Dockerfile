@@ -1,5 +1,5 @@
 # levanto el java-maven del cual va a tomar el proyecto para construir el jar
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 # remarco el directorio del trabajo
 WORKDIR /app
 # le digo que COPIE las dependencias del POM - que copie los archivos de las dependencias
