@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 @Service
-@PropertySource("classpath:cloudinary.properties")
+// @PropertySource("classpath:cloudinary.properties") -- decidi trabajar con variable de entorno
 public class CloudinaryService {
 
   private final Cloudinary cloudinary;

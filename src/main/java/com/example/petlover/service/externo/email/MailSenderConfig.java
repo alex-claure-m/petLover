@@ -14,7 +14,7 @@ import java.util.Properties;
 // es la configuracion de protocolos para conectarse con gmail
 // + un bean, instanciacion,
 @Configuration
-@PropertySource("classpath:email.properties")
+// @PropertySource("classpath:email.properties") -- debido a que lo pase por variable de entorno
 public class MailSenderConfig {
 
 	@Value(value = "${spring.mail.username}")
