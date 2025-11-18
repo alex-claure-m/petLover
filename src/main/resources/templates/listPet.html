@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/listPet.css}">
+
+    <title>Listado de mis mascotas</title>
+</head>
+<body>
+<header>
+    <p>Pet-Lover</p>
+</header>
+<div class="pets-dashboard">
+    <div class="pet-card" th:each="mascota : ${mascotas}">
+        <img th:src="${mascota.foto}" alt="Foto mascota">
+        <p th:text="${mascota.nombre}"></p>
+        <div class="card-actions">
+            <a th:href="@{/petlover/qr/mascota/{id}(id=${mascota.id})}" class="btn btn-primary">QR</a>
+            <a th:href="@{/petlover/mascota/{id}(id=${mascota.id})}" class="btn btn-outline">Ver más</a>
+        </div>
+    </div>
+</div>
+</body>
+<footer>
+    <p>© 2025 PetLover | Proyecto autodidacta de Alexander Claure</p>
+    <p><a href="https://github.com/tu-usuario/petlover" target="_blank">Ver en GitHub</a></p>
+</footer>
+</html>

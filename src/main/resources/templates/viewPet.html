@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/viewPet.css}">
+    <title>ViewPet</title>
+</head>
+<body>
+<header>
+    <p>Pet-Lover</p>
+</header>
+<div class="pet-view-container">
+    <h2>Ficha de Mascota</h2>
+
+    <div class="pet-photo">
+        <img th:src="${mascota.foto}" alt="Foto de la mascota">
+    </div>
+
+    <div class="pet-info">
+        <p><strong>Nombre:</strong> <span th:text="${mascota.nombre}"></span></p>
+        <p><strong>Tipo:</strong> <span th:text="${mascota.tipo}"></span></p>
+        <p><strong>Raza:</strong> <span th:text="${mascota.raza.getNombre}"></span></p>
+        <p><strong>Edad:</strong> <span th:text="${mascota.edad}"> </span></p>
+        <p><strong>Ficha Tecnica:</strong> <span th:text="${mascota.fichaClinica}"></span></p>
+    </div>
+
+    <div class="pet-actions">
+        <!-- Botón Aceptar -->
+        <a th:href="@{/petlover/lista}" class="btn primary">Aceptar</a>
+
+        <!-- Botón Generar QR -->
+        <a th:href="@{/petlover/qr/mascota/{id}(id=${mascota.id})}" class="btn outline">Generar QR</a>
+
+        
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/qr-view.css}">
+    <script th:src="@{/js/qr-view.js}"></script>
+
+    <title>QR de Mascota</title>
+</head>
+<body>
+    <header>
+        <p>Pet-Lover</p>
+    </header>
+
+    <div class="qr-container">
+        <p th:text="${mascota.nombre}"></p>
+        <img th:src="${qrCode}" alt="QR Mascota">
+
+        <div class="qr-buttons">
+            <button onclick="descargarQR()">Descargar QR</button>
+            <button onclick="window.print()">Imprimir</button>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>© 2025 PetLover | Proyecto autodidacta de Alexander Claure</p>
+    <p><a href="https://github.com/tu-usuario/petlover" target="_blank">Ver en GitHub</a></p>
+</footer>
+</html>

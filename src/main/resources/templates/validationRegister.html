@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/validationRegister.css}">
+    
+   
+    <title>Validation-Register</title>
+</head>
+<body>
+    <header>
+        <p>Pet-Lover</p>
+    </header>
+    <div class="container">
+        <h2>Verifica tu cuenta</h2>
+        <p>Enviamos un codigo de verificacion a tu correo electronico.
+            Por favor introduzca el codigo:</p>
+
+        <div th:if="${success}" class="alert alert-success">
+            <p th:text="${success}"></p>
+        </div>
+        <div th:if="${error}" class="alert alert-success">
+            <p th:text="${error}"></p>
+        </div>
+<!-- thymeleaf creara 7 boxes, uno por cada digito  -->
+        <form th:action="@{/petlover/verification/verificar}" method="POST" class="verification-form">
+            <!--este input hidden es para ocultar el id que paso del register a validation  -->
+            <input type="hidden" name="duenioId" th:value="${duenioId}" />
+
+            <div class="code-container">
+                <input type="text" name="digit1" maxlength="1" required>
+                <input type="text" name="digit2" maxlength="1" required>
+                <input type="text" name="digit3" maxlength="1" required>
+                <input type="text" name="digit4" maxlength="1" required>
+                <input type="text" name="digit5" maxlength="1" required>
+                <input type="text" name="digit6" maxlength="1" required>
+
+            </div>
+
+            <div class="btn-container">
+                <button type="submit">Verificar Código</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+<footer>
+    <p>© 2025 PetLover | Proyecto autodidacta de Alexander Claure</p>
+    <p><a href="https://github.com/tu-usuario/petlover" target="_blank">Ver en GitHub</a></p>
+</footer>
+</html>

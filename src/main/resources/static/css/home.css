@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    color: #222;
+}
+
+/* HEADER (banner con imagen de fondo y opacidad) */
+header {
+    position: relative;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #1b3485ad;
+    color: rgb(114, 29, 29);
+    text-align: center;
+    padding: 2vh 5vw;               /* unidades relativas para responsividad */
+    font-size: 2.5vw;
+    font-weight: bold;
+    height: 30vh;                   /* altura relativa */
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.kindpng.com/picc/m/13-131510_fondo-de-animales-domesticos-png-transparent-png.png');
+    background-size: cover;
+    background-position: center -130px;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+header p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    line-height: 30vh;              /* centra verticalmente el texto dentro del header */
+}
+
+/* CONTENEDOR PRINCIPAL (form / botones) */
+.form-container {
+    width: 70%;
+    max-width: 500px;
+    margin: 40px auto;              /* centrado horizontal, con margen superior */
+    padding: 24px;
+    background-color: #ffffffdd;    /* blanco con leve transparencia */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    font-family: "Mulish", sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* TÍTULO "Bienvenido" (más pequeño y compacto) */
+.form-container h2 {
+    text-align: center;
+    color: #7913b4;
+    margin: 6px 0 12px 0;           /* reducido para que quede compacto */
+    font-size: 1.4rem;              /* tamaño achicado */
+    font-weight: 700;
+}
+
+/* Etiquetas e inputs (si los tuvieras dentro) */
+.form-container label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-container input {
+    width: 95%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.25s;
+    box-sizing: border-box;
+}
+
+.form-container input:focus {
+    border: 1px solid #7913b4;
+    outline: none;
+}
+
+/* BOTONES PRINCIPALES - apilados con 10px de separación */
+.form-container .main-buttons {
+    display: flex;
+    flex-direction: column;    /* siempre en columna: uno arriba del otro */
+    align-items: center;
+    gap: 10px;                 /* separación exacta solicitada */
+    margin-top: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* estilo del botón (aplicable a <a> o <button>) */
+.form-container .primary-btn {
+    display: inline-block;
+    width: 100%;               /* ocupa todo el ancho del contenedor */
+    max-width: 360px;          /* límite para pantallas grandes */
+    text-align: center;
+    padding: 0.9rem 1.2rem;
+    font-size: 1.05rem;
+    background-color: #7913b4;
+    color: #ffffff;
+    text-decoration: none;     /* para <a> */
+    border: none;              /* para <button> */
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.12s ease;
+    box-shadow: 0 6px 14px rgba(121,19,180,0.18);
+    box-sizing: border-box;
+}
+
+/* efecto hover / focus */
+.form-container .primary-btn:hover,
+.form-container .primary-btn:focus {
+    background-color: #5e0e8a;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* Si por algún motivo prefieres dos botones en fila en pantallas muy anchas,
+   pero manteniendo prioridad a la columna (opcional): */
+@media (min-width: 900px) {
+    .form-container {
+        max-width: 640px;
+    }
+    /* mantenemos columna por defecto; si quisieras fila, descomentar siguiente bloque:
+    .form-container .main-buttons {
+        flex-direction: row;
+        gap: 16px;
+    }
+    .form-container .primary-btn {
+        width: auto;
+        min-width: 220px;
+    }
+    */
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 420px) {
+    .form-container {
+        width: 92%;
+        padding: 18px;
+        margin: 24px auto;
+    }
+    .form-container h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .form-container .primary-btn {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    header { font-size: 4.5vw; height: 22vh; }
+    header p { line-height: 22vh; }
+}
+
+/* FOOTER (coherente con estilo previo) */
+footer {
+    text-align: center;
+    padding: 2vh 0;
+    margin-top: 80px;
+    background-color: #eee;
+    font-size: 1vw;
+    color: #555;
+}
+
+footer a {
+    color: #7913b4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

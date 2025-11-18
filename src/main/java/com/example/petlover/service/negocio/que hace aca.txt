@@ -1,0 +1,9 @@
+* aca delego mejor el trabajo que tiene que realziar cada clase del domain
+* si requiero relacionar al dueño con una mascota, va en MASCOTASERVICE.JAVA
+* actualizo los datos de cada uno
+* elimino datos, como mascota
+* traigo listas!
+-- estos registros no trabajan con los DTO - solo lso controller lo trabajan
+-- EN OTRAS PALABRAS
+    - TRANSFORMO lo que me llega del DTO a una nueva instancia
+    - esta nueva instancia es la que se almacenara en la base de datos

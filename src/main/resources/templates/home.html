@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+    <p>Pet-Lover</p>
+    </header>
+
+    <div class="form-container">
+    <h2>Bienvenido <span sec:authentication="name"></span>!</h2>
+
+    <!-- Aquí van los dos botones (registro / ver lista) -->
+    <div class="main-buttons">
+    
+        <a class="primary-btn" th:href="@{/registrarmascota}">Registrar mascota</a>
+        <a class="primary-btn" th:href="@{/lista}">Ver mis Mascotas</a>
+    </div>
+    </div>
+</body>
+<footer>
+    <p>© 2025 PetLover | Proyecto autodidacta de Alexander Claure</p>
+    <p><a href="https://github.com/tu-usuario/petlover" target="_blank">Ver en GitHub</a></p>
+</footer>
+</html>

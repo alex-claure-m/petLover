@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    color: #222;
+}
+
+/* HEADER (banner con imagen de fondo y opacidad) */
+header {
+    position: relative;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #1b3485ad;
+    color: rgb(114, 29, 29);
+    text-align: center;
+    padding: 2vh 5vw;               /* unidades relativas para responsividad */
+    font-size: 2.5vw;
+    font-weight: bold;
+    height: 30vh;                   /* altura relativa */
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.kindpng.com/picc/m/13-131510_fondo-de-animales-domesticos-png-transparent-png.png');
+    background-size: cover;
+    background-position: center -130px;
+    opacity: 0.7;
+    z-index: 0;
+}
+header p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    line-height: 30vh;              /* centra verticalmente el texto dentro del header */
+}
+/* ----------- ESTILOS DE LA FICHA DE MASCOTA ----------- */
+.pet-card {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 4vh auto; /* centra vertical y horizontalmente */
+}
+
+.pet-img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;      /* mantiene forma cuadrada */
+    object-fit: contain;       /* ajusta sin recortar */
+    background-color: #fff;    /* marco visible */
+    border-radius: 10px;
+    border: 2px solid #7913b4;
+}
+
+.pet-info h2 {
+    font-family: "Mulish", sans-serif;
+    font-size: 1.6rem;
+    color: #1b3485ad;
+    margin-bottom: 0.8rem;
+}
+
+.pet-info p {
+    color: #444;
+    font-size: 1rem;
+    margin: 0.3rem 0;
+}
+footer {
+    text-align: center;
+    padding: 2vh 0;
+    margin-top: 100px; /* ⬅️ separamos el footer del contenido anterior */
+    background-color: #eee;
+    font-size: 1vw;
+    color: #555;
+}
+
+footer a {
+    color: #7913b4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

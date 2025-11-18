@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/forgot.css}">
+    <title>Forgot Password</title>
+</head>
+<body>
+<header>
+    <p>Pet-Lover</p>
+</header>
+
+<div class="form-container">
+    <h2>Recuperar Contraseña</h2>
+
+    <p>Ingresa el correo con el que registraste tu cuenta. Te enviaremos un codigo para restablecer tu contraseña.</p>
+
+
+    <form th:action="@{/recuperar/resend-email}" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <div class="input-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        </div>
+
+        <div class="btn-container">
+            <button type="submit" class="primary-btn">Enviar enlace</button>
+        </div>
+        <div th:if="${success}" class="success-message" th:text="${success}"></div>
+        <div th:if="${error}" class="error-message" th:text="${error}"></div>
+    </form>
+</div>
+
+<footer>
+    <p>© 2025 PetLover | Proyecto autodidacta de Alexander Claure</p>
+    <p><a href="https://github.com/tu-usuario/petlover" target="_blank">Ver en GitHub</a></p>
+</footer>
+</body>
+</html>

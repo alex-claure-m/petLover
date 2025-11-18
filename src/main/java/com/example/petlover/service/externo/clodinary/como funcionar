@@ -1,0 +1,12 @@
+bueno aca robe el js del curso que da cloudinary.
+basicamente lo que hice yo con este service es para pasarle por parametros, mediante properties
+las credenciales debido a que estas credenciales no las subire al git
+primero es crear el service trayendo las credenciales
+una vez hecho esto => direccionate a donde lo tenes que usar
+    en mi caso lo tengo que levantar en homeController
+    en el GETMAPPING de registerPet
+    por que ahi se encuentra el js de cargar imagenes
+antes que eso igual verifica que springsecurity tenga los permisos => endpoints en el crsf
+    luego, vas al browser de cloudinary - settings - upload - preset, y creas un nuevo configuracion
+    y de tipo unsigned
+    ya que ahi estara el uploadpreset , que basicamente es para subir de la forma segura o no (signe / unsigned)

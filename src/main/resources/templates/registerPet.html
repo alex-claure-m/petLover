@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/registerPet.css}">
+    <script th:inline="javascript">
+        const cloudName = [[${cloudName}]];
+        const uploadPreset = "unsigned-image";
+    </script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script th:src="@{/js/uploadphoto.js}"></script>
+    <title>Registro Mascota</title>
+</head>
+<body>
+     <header>
+        <p>Pet-Lover</p>
+    </header>
+
+
+     <form th:action="@{/petlover/mascota/registro}"
+           th:object="${mascotaDTO}"
+           method="post"
+           class="form-container">
+
+         <h2>Registrar Mascota</h2>
+
+         <!-- Imagen circular -->
+         <div class="foto-container">
+             <label for="upload_widget">Foto de la mascota</label>
+             <button id="upload_widget" class="cloudinary-button" type ="button">Subir foto</button>
+             <img id="uploaded" alt="Vista previa"
+                  style="display:none; margin-top:10px; border-radius:50%; width:120px; height:120px;">
+             <input type="hidden" name="fotoUrl" th:field="*{fotoUrl}" id="fotoUrl">
+         </div>
+
+         <label for="nombre">Nombre</label>
+         <input type="text" id="nombre" th:field="*{nombre}" placeholder="Ej: Rocky">
+
+         <label for="tipo">Tipo</label>
+         <select id="tipo" th:field="*{tipo}">
+             <option value="perro">Perro</option>
+             <option value="gato">Gato</option>
+             <option value="conejo">Conejo</option>
+             <option value="gallina">Gallina</option>
+         </select>
+
+         <label for="raza">Raza</label>
+         <input type="text" id="raza" th:field="*{raza}" placeholder="Ej: Labrador">
+
+         <label for="edad">Edad (en años)</label>
+         <input type="number" id="edad" th:field="*{edad}" placeholder="Ej: 3" min="0">
+
+         <label>Sexo</label>
+         <div class="sexo-container">
+             <input type="radio" id="macho" th:field="*{sexo}" value="macho">
+             <label for="macho">Macho</label>
+             <input type="radio" id="hembra" th:field="*{sexo}" value="hembra">
+             <label for="hembra">Hembra</label>
+         </div>
+
+         <div class="ficha-container">
+             <label for="fichaClinica">¿Tiene ficha clínica?</label>
+             <input type="checkbox" id="fichaClinica" th:field="*{fichaClinica}">
+         </div>
+
+         <label for="descripcion">Descripción</label>
+         <textarea id="descripcion" th:field="*{descripcion}"
+                   placeholder="Ej: Muy juguetón, le gusta correr..." rows="3"></textarea>
+
+         <button type="submit">Guardar Mascota</button>
+     </form>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    color: #222;
+}
+
+/* HEADER (banner con imagen de fondo y opacidad) */
+header {
+    position: relative;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #1b3485ad;
+    color: rgb(114, 29, 29);
+    text-align: center;
+    padding: 2vh 5vw;               /* unidades relativas para responsividad */
+    font-size: 2.5vw;
+    font-weight: bold;
+    height: 30vh;                   /* altura relativa */
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.kindpng.com/picc/m/13-131510_fondo-de-animales-domesticos-png-transparent-png.png');
+    background-size: cover;
+    background-position: center -130px;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+header p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    line-height: 30vh;              /* centra verticalmente el texto dentro del header */
+}
+/* Main layout: título arriba, form centrado */
+main {
+  display: block;
+  padding: 4vh 2vw;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title-container h2 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #1b3485ad;
+  margin: 0;
+}
+
+.title-container .sub {
+  margin-top: 8px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Form */
+.login-form {
+  background: white;
+  padding: 2.2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Inputs */
+input[type="email"],
+input[type="password"] {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.6px solid #d0d0d0;
+  transition: border-color 0.2s;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #7913b4;
+  outline: none;
+}
+/* Igualar apariencia entre password y text */
+input[type="password"],
+input[type="text"] {
+    -webkit-text-security: none; /* evita cambios visuales */
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1.6px solid #d0d0d0;
+    background: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+/* Mantener mismo borde cuando se muestra la contraseña */
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-color: #7913b4;
+    outline: none;
+}
+
+/* password row (input + toggle) */
+.password-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.password-row input {
+  flex: 1;
+}
+
+.toggle-pass {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.05rem;
+  padding: 0.4rem;
+  border-radius: 6px;
+}
+
+/* Aux row (remember + forgot) */
+.aux-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+  font-size: 0.95rem;
+}
+
+.aux-row .remember input { margin-right: 8px; }
+.link-sm { color: #7913b4; text-decoration: none; }
+.link-sm:hover { text-decoration: underline; }
+
+/* Botón principal (coherente con estilo previo) */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.6rem;
+}
+
+.primary-btn {
+  padding: 0.95rem 2.2rem;
+  font-size: 1.05rem;
+  background-color: #7913b4;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(121,19,180,0.25);
+  transition: background-color 0.25s, transform 0.15s;
+}
+
+.primary-btn:hover {
+  background-color: #5e0e8a;
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Pie y mensajes */
+.foot {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.error {
+  margin-top: 1rem;
+  color: #b00020;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Responsive muy simple (sin media query compleja) */
+@media (max-width: 420px) {
+  header { font-size: 4.5vw; height: 16vh; }
+  .primary-btn { width: 100%; padding-left: 0; padding-right: 0; }
+}
+
+footer {
+    text-align: center;
+    padding: 2vh 0;
+    margin-top: 100px; /* ⬅️ separamos el footer del contenido anterior */
+    background-color: #eee;
+    font-size: 1vw;
+    color: #555;
+}
+
+footer a {
+    color: #7913b4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.alert-error {
+    color: #721c24;              /* Texto */
+    background-color: #f8d7da;   /* Fondo */
+    border: 1px solid #f5c6cb;   /* Borde */
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+}

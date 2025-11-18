@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/view-public.css}">
+
+
+    <title>Pet</title>
+</head>
+<body>
+<header>
+    <p>Pet-Lover</p>
+</header>
+
+<div class="pet-card">
+    <img th:src="${imagen}" alt="Foto de la mascota">
+    <div class="pet-info">
+        <h2 th:text="${mascota.nombre}">Nombre Mascota</h2>
+        <p><strong>Dueño:</strong> <span th:text="${mascota.duenio.nombre}">Juan Pérez</span></p>
+        <p><strong>Teléfono:</strong> <span th:text="${mascota.duenio.nroTelefono}">+54 9 1234-5678</span></p>
+    </div>
+</div>
+
+</body>
+<footer>
+    © 2025 PetLover | Proyecto autodidacta de Alexander Claure
+</footer>
+</html>

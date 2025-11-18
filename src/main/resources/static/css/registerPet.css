@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    color: #222;
+}
+
+/* HEADER (banner con imagen de fondo y opacidad) */
+header {
+    position: relative;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #1b3485ad;
+    color: rgb(114, 29, 29);
+    text-align: center;
+    padding: 2vh 5vw;               /* unidades relativas para responsividad */
+    font-size: 2.5vw;
+    font-weight: bold;
+    height: 30vh;                   /* altura relativa */
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.kindpng.com/picc/m/13-131510_fondo-de-animales-domesticos-png-transparent-png.png');
+    background-size: cover;
+    background-position: center -130px;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+header p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    line-height: 30vh;              /* centra verticalmente el texto dentro del header */
+}
+/* Contenedor principal del formulario */
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+ 
+}
+
+/* Título */
+.form-container h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Foto */
+.foto-container {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.foto-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+.foto-container input[type="file"] {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  margin-right: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Labels generales */
+.form-container label {
+  display: block;
+  margin: 12px 0 6px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Inputs y selects */
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* esto asegura que respete padding y width */
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #0077cc;
+}
+
+/* Edad (años y meses) */
+.edad-container {
+  display: flex;
+  gap: 10px;
+}
+
+.edad-container input {
+  flex: 1;
+}
+
+/* Sexo */
+.sexo-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0 20px;
+}
+
+.sexo-container label {
+  margin-left: 4px;
+  font-weight: normal;
+  color: #333;
+}
+
+/* Botón principal */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-container button:hover {
+  background-color: #005fa3;
+}
+
+#uploaded {
+    display: block;
+    margin: 10px auto 0;  /* centrado horizontal */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+
+.ficha-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 20px;
+}
+
+.ficha-container label {
+    font-weight: 600;
+    color: #555;
+}
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #aaa;
+}
+

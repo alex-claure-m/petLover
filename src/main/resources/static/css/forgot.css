@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+}
+header {
+    position: relative;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #1b3485ad;
+    color: rgb(114, 29, 29);
+    text-align: center;
+    padding: 2vh 5vw; /* usamos unidades relativas */
+    font-size: 2.5vw; /* el tamaño del texto se adapta al ancho de la pantalla */
+    font-weight: bold;
+    height: 30vh; /* altura relativa al alto de la pantalla */
+    overflow: hidden;
+}
+
+/* Fondo de imagen con opacidad (dentro del header) */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top, right, bottom, left = 0 */
+    background-image: url('https://www.kindpng.com/picc/m/13-131510_fondo-de-animales-domesticos-png-transparent-png.png');
+    background-size: cover;
+    background-position: center -130px;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+/* El texto va por encima del fondo */
+header p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+
+
+.form-container {
+    flex: 1;
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.form-container p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    width: 100%;
+    text-align: center; /* centramos label e input */
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    color: #444;
+    text-align: center;
+}
+
+input[type="email"] {
+    width: 90%; /* ✅ ancho equilibrado dentro del form */
+    max-width: 600px; /* ✅ evita que se agrande demasiado en pantallas grandes */
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto; /* ✅ centra horizontalmente */
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.form-container button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 14px;
+    background-color: #7913b4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #5e0e8a;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.error-message {
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #5f6caf;
+    text-decoration: none;
+}

@@ -1,0 +1,14 @@
+basicamente es UNA capa que interactua con la base de datos
+- aca ira funciones con la que traere o inyectare datos
+- lo interesante de esto es cuando tenes consultas personalizadas como por ejemplo:
+
+@Query(value = "SELECT * FROM duenios WHERE domicilio = :domicilio", nativeQuery = true)
+List<Duenio> buscarPorDomicilio(@Param("domicilio") String domicilio);
+
+o
+
+@Query("SELECT d FROM Duenio d WHERE d.nombre LIKE %:nombre%")
+List<Duenio> buscarPorNombreParcial(@Param("nombre") String nombre);
+
+sino, es muy medio pasamanos , pero es importante que exista ya que es como un punto de netrada
+- para cada clase a su entidad correspondiente.
