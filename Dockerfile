@@ -17,7 +17,7 @@ RUN ls -la /app/target
 FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
-# y copio y cambio el nombre el mismo .jar
+#y copio y cambio el nombre el mismo .jar
 COPY --from=build /app/target/petLover-0.0.1-SNAPSHOT.jar /app/petLover.jar
 
 EXPOSE 8080
