@@ -6,7 +6,7 @@ WORKDIR /app
 COPY pom.xml .
 # y levanta todas las dependencias de manera offline
 RUN mvn dependency:go-offline
-# copia todo el proyecto
+# copia to-do el proyecto
 COPY src ./src
 # levanta el proyecto y correlo
 RUN mvn clean package -DskipTests

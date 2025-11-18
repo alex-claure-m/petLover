@@ -36,3 +36,5 @@ build/
 *.properties
 *.yml
 *.yaml
+Dockerfile
+docker-compose.yml
